@@ -12,7 +12,7 @@ def generate_password():
     elements = "+-/*!&$#?=@<>123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
     length = random.randint(8, 16)
     password = "".join(random.choice(elements) for _ in range(length))
-    return password
+    return render_template('password.html', password=password)
 
 @app.route('/tech-depend')
 def tech_dependencies():
