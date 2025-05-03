@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <title>Портфолио</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="header__nav main-nav">
+        <ul class="main-nav__list main-list">
+          <li class="main-list__item list-item">
+            <a class="list-item__link" href="#home">HOME</a>
+          </li>
+          <li class="main-list__item list-item">
+            <a class="list-item__link" href="#about">ABOUT</a>
+          </li>
+          <li class="main-list__item list-item">
+            <a class="list-item__link" href="#skills">MY SKILLS</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main">
+      <!-- Секция превью -->
+      <section class="main__home home" id="home">
+        <h1 class="home__title">SAVCHENKO DANIIL</h1>
+        <p class="home__subtitle">WEB-DEVELOPER, PYTHON PROGRAMMER</p>
+      </section>
+      <!-- Секция с рассказом о себе -->
+      <section class="main__about about" id="about">
+        <h2 class="about__title">ABOUT ME</h2>
+        <div class="about__info info-block">
+          <p class="info-block__text">
+            Привет! Меня зовут Савченко Даниил, и я — начинающий разработчик с широким кругом интересов в сфере IT. Меня увлекает веб-разработка, создание игр на Unity, программирование на Python и C++, а также всё, что связано с технологиями и креативом.
+            Я создал множество сайтов и разработал две игры, в которых реализовал как геймплей, так и дизайн.
+            Кроме программирования, я рисую, увлекаюсь музыкой и люблю придумывать новые идеи. Я считаю, что совмещение творческого подхода и аналитического мышления — моя сильная сторона.
+            Мне нравится учиться, разбираться в логике работы систем и делать что-то уникальное. В будущем я хочу развиваться в IT, заниматься крупными проектами и, возможно, создать собственную игру или веб-приложение, которое изменит чью-то жизнь к лучшему.
+
+          </p>
+          <img
+            class="info-block__img"
+            src="../static/img/cat.jpg"
+            alt="me"
+            width="250"
+            height="250"
+          />
+        </div>
+      </section>
+      <!-- Секция со скиллами -->
+      <section class="main__skills skills" id="skills">
+        <h2 class="skills__title">MY SKILLS</h2>
+        <form action="/" method="POST">
+          <ul class="skills__list skills-list">
+            <li class="skills-list__skill skill">
+              <img class="skill__img" src="../static/img/python.png" alt="python" width="150" height="150" />
+              <span class="skill__info">Расчет затрат электроэнергии</span>
+              <input class="skill__button" type="submit" name="button_python" value="SHOW PROJECT">
+            </li>
+            <li class="skills-list__skill skill">
+              <img class="skill__img" src="../static/img/telegram.png" alt="telegram" width="150" height="150" />
+              <span class="skill__info">Экобот</span>
+              <input class="skill__button" type="submit" name="button_telegram" value="SHOW PROJECT">
+            </li>
+            <li class="skills-list__skill skill">
+              <img class="skill__img" src="../static/img/html.png" alt="html" width="150" height="150" />
+              <span class="skill__info">Генератор мемов</span>
+              <input class="skill__button" type="submit" name="button_html" value="SHOW PROJECT">
+            </li>
+            <li class="skills-list__skill skill">
+              <img class="skill__img" src="../static/img/db.webp" alt="SQL" width="150" height="150" />
+              <span class="skill__info">Дневник программиста</span>
+              <input class="skill__button" type="submit" name="button_db" value="SHOW PROJECT">
+            </li>
+          </ul>
+        </form>
+        
+        <!-- Python -->
+        {% if button_python %}
+          <div class="skills__project project" id="project-python">
+            <img class="project__img" src="../static/img/python-project.png" alt="project" width="500">
+            <a class="project__link" href="https://github.com/Ra1ny7/Module1L1/tree/main/calculator-main">Открыть на GitHub</a>
+          </div>
+        {% endif %}
+        
+        <!-- Telegram -->
+        {% if button_telegram %}
+          <div class="skills__project project" id="project-python">
+            <img class="project__img" src="../static/img/telegram-project.png" alt="project" width="500">
+            <a class="project__link" href="https://github.com/Ra1ny7/Module1L1/blob/main/ecobot.py">Открыть на GitHub</a>
+          </div>
+        {% endif %}
+        
+        <!-- HTML -->
+        {% if button_html %}
+          <div class="skills__project project" id="project-python">
+            <img class="project__img" src="../static/img/html-project.png" alt="project" width="500">
+            <a class="project__link" href="https://github.com/Ra1ny7/Module1L1/tree/main/meme-creator-main">Открыть на GitHub</a>
+          </div>
+        {% endif %}
+        
+        <!-- DB -->
+        {% if button_db %}
+          <div class="skills__project project" id="project-python">
+            <img class="project__img" src="../static/img/db-project.png" alt="project" width="500">
+            <a class="project__link" href="https://github.com/Ra1ny7/Module1L1/tree/main/diary-main">Открыть на GitHub</a>
+          </div>
+        {% endif %}
+        <ul class="info-block__text">
+          <li>Python — уверенный уровень</li>
+          <li>Unity / C# — создание игр и взаимодействие с игровыми механиками</li>
+          <li>C++ — фундаментальное программирование</li>
+          <li>HTML / CSS / JS — создание сайтов</li>
+          <li>Работаю вместе с GitHub</li>
+          <li>Умею работать в команде</li>
+          <li>Разработчик на языке 1C</li>
+          <li>Аналитическое мышление</li>
+          <li>Креативность</li>
+          <li>Быстрая обучаемость и любознательность</li>
+          <li>Умение совмещать логику и эстетику</li>
+        </ul>
+      <!-- Секция с формой обратной связи -->
+      <section class="main__feedback feedback" id="feedback">
+        <h2 class="feedback__title">FEEDBACK</h2>
+        {% if feedback_sent %}
+          <p class="feedback__success">Спасибо, {{ email }}! Ваш отзыв получен.</p>
+        {% endif %}
+        <form action="" method="POST" class="feedback__form form">
+          <label for="email">
+            <input type="email" class="form__input" name="email" id="email" placeholder="Введите E-mail" required>
+          </label>
+          <label for="text">
+            <textarea name="text" class="form__input" id="text" cols="70" rows="10" required placeholder="Комментарий"></textarea>
+          </label>
+          <button class="form__button" type="submit">ОТПРАВИТЬ</button>
+        </form>
+      </section>
+    </main>
+
+    <!-- Подвал для ссылок на соц-сети -->
+    <footer>
+      <ul class="info-block__text">
+        <li>Instagram: ra1ny.7</li>
+        <li>Telegram: ra1ny0</li>
+        <li>E-mail: daniilsavchenko071208@gmail.com</li>
+        <li>Telephone number: +77071372070</li>
+      </ul>
+    </footer>
+  </body>
+</html>
